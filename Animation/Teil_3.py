@@ -3,7 +3,7 @@
 # Pygame Modul importieren.
 import pygame
 
-# Unser Tilemap Modul ebenfalls importieren.
+# Unser Tilemap Modul
 import Tilemap
 
 # Überprüfen, ob die optionalen Text- und Sound-Module geladen werden konnten.
@@ -17,11 +17,11 @@ def main():
     screen = pygame.display.set_mode((800, 600))
     
     # Titel des Fensters setzen, Mauszeiger nicht verstecken und Tastendrücke wiederholt senden.
-    pygame.display.set_caption("Pygame-Tutorial: Tilemap")
+    pygame.display.set_caption("Pygame-Tutorial: Animation")
     pygame.mouse.set_visible(1)
     pygame.key.set_repeat(1, 30)
 
-    # Clock Objekt erstellen, das wir benötigen, um die Framerate zu begrenzen.
+    # Clock-Objekt erstellen, das wir benötigen, um die Framerate zu begrenzen.
     clock = pygame.time.Clock()
     
     # Wir erstellen eine Tilemap.
@@ -31,12 +31,11 @@ def main():
     running = True
     while running:
         # Framerate auf 30 Frames pro Sekunde beschränken.
-
         # Pygame wartet, falls das Programm schneller läuft.
         clock.tick(30)
 
         # screen Surface mit Schwarz (RGB = 0, 0, 0) füllen.
-        screen.fill((0, 0, 0))
+        screen.fill((198, 209, 255))
 
         # Alle aufgelaufenen Events holen und abarbeiten.
         for event in pygame.event.get():

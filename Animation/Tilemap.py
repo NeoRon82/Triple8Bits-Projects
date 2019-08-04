@@ -1,8 +1,8 @@
 # -*- coding: UTF-8 -*-
 
-import random
 import pygame
 import Tileset
+import Player
 
 # Die Tilemap Klasse verwaltet die Tile-Daten, die das Aussehen der Karte beschreiben.
 class Tilemap(object):
@@ -11,9 +11,9 @@ class Tilemap(object):
         # Hier im Tutorial fügen wir manuell vier Tile-Typen hinzu.
         self.tileset = Tileset.Tileset("tileset.png", (255, 0, 255), 32, 32)
         self.tileset.add_tile("grass", 0, 0)
-        self.tileset.add_tile("mud", 32, 0)
-        self.tileset.add_tile("water", 64, 0)
-        self.tileset.add_tile("block", 0, 32)
+        self.tileset.add_tile("mud", 32, 0)        
+        self.tileset.add_tile("grass-mud", 0, 64)
+        self.tileset.add_tile("empty", 0, 96)
         
         # Festlegen der Startposition der Kamera. Hier (0, 0).
         self.camera_x = 0
@@ -25,21 +25,22 @@ class Tilemap(object):
 
         # Erstellen einer leeren Liste für die Tile Daten.
         self.tiles = list()
-        
-        # Manuelles Befüllen der Tile-Liste:
-        # Jedes Feld bekommt ein zufälliges Tile zugewiesen.
+                
+        # Sehr einfache Karte basteln:
         for i in range(0, self.height):
             self.tiles.append(list())
             for j in range(0, self.width):
-                x = random.randint(0, 4)
-                if x == 0:
-                    self.tiles[i].append("grass")
-                elif x == 1:
-                    self.tiles[i].append("water")
-                elif x == 2:
+                if i == 14:
+                    self.tiles[i].append("grass") 
+                elif i == 15:
+                    self.tiles[i].append("grass-mud")
+                elif i > 15:
                     self.tiles[i].append("mud")
                 else:
-                    self.tiles[i].append("block")
+                    self.tiles[i].append("empty")
+        
+        # Player-Objekt erstellen.
+        self.player = Player.Player()
                     
     
     # Hier rendern wir den sichtbaren Teil der Karte.
@@ -64,18 +65,11 @@ class Tilemap(object):
                 # Falls das nicht fehlschlägt können wir das Tile auf die screen-Surface blitten.
                 if tile is not None:
                     screen.blit(self.tileset.image, (x * self.tileset.tile_width, y * self.tileset.tile_height), tile.rect)
-                    
-    
-    # Tastendrücke verarbeiten:
-    def handle_input(self, key):
-        # Pfeiltaste links oder rechts erhöht bzw. verringert die x-Position der Kamera.
-        if key == pygame.K_LEFT:
-            self.camera_x -= 1
-        if key == pygame.K_RIGHT:
-            self.camera_x += 1
         
-        # Und das gleiche nochmal für die y-Position.
-        if key == pygame.K_UP:
-            self.camera_y -= 1
-        if key == pygame.K_DOWN:
-            self.camera_y += 1
+        # Und zuletzt den Player rendern.
+        self.player.render(screen)
+
+        
+    # Tastendrücke an den Player weiterreichen:
+    def handle_input(self, key):        
+        self.player.handle_input(key)           
