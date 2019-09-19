@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 5.70 LTS (Windows - x64)">
+  <section name="config">
+    <options closefiles="1" openmode="0" name="PB_Tilemap"/>
+  </section>
+  <section name="data">
+    <explorer view="C:\ProgramData\PureBasic\Examples\" pattern="0"/>
+    <log show="1"/>
+    <lastopen date="2019-08-12 19:35" user="User" host="DESKTOP-23QVBVH"/>
+  </section>
+  <section name="files">
+    <file name="Control.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="78fcb9b92d9c3349421a7fc16738fb89"/>
+    </file>
+    <file name="Defines.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="5ed171d6a06ac037ac136c8739803bc4"/>
+    </file>
+    <file name="Display.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="9a4df3f28a544663be2733e815ca84f0"/>
+    </file>
+    <file name="Functions.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="10c49b4779fef548f3dfe26f6a022a7f"/>
+    </file>
+    <file name="Inits.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="d15ab89762a79dbea73940731974c0bc"/>
+    </file>
+    <file name="Lists.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="8540de97a894ecb08aeb19aeec848651"/>
+    </file>
+    <file name="LoadContent.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="7be627e59c43bb95382aaa9e6f886576"/>
+    </file>
+    <file name="Main.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="f798dfdfa14319bd6587176343a50604"/>
+    </file>
+    <file name="ReadData.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" panelstate="+"/>
+      <fingerprint md5="ea541931f53f1313038bd47b28107467"/>
+    </file>
+  </section>
+  <section name="targets">
+    <target name="Default Target" enabled="1" default="1">
+      <inputfile value="Main.pb"/>
+      <outputfile value=""/>
+      <options xpskin="1" debug="1"/>
+    </target>
+  </section>
+</project>
